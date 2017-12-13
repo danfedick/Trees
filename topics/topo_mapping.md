@@ -1,4 +1,7 @@
-# Resources for Mapping
+---
+title: Resources for Mapping
+layout: post
+---
 
 ## Contour lines
 
