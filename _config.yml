@@ -4,4 +4,5 @@ description: Figuring this out one rootstock at a time.
 show_downloads: false 
 # google_analytics: 
 
+baseurl: /Trees
 BASE_PATH: github.com/dfedick/Trees
