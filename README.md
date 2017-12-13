@@ -1,4 +1,4 @@
-# FarmScale Permaculture
+# Zion Farm 
 
 ![ZionFarm](https://dfedick.github.io/Trees/assets/images/header.jpg)
 
