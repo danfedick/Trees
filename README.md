@@ -1,6 +1,6 @@
 # FarmScale Permaculture
 
-![ZionFarm]({{ site.url }}/assets/header.jpg)
+![ZionFarm]({{ site.url }}/assets/images/header.jpg)
 
 I am at the point now where I have to make a decsion.  Choose to let the front 10 acres stay in hay for the next 5 years or use it for what I've always wanted to do with this property; build a perennial silvopasture system.  As the old saying goes, the best time to plant a tree (or in my case an orchard) is 30 years ago.  The second best time is today.  While I'm not going to plant today because I have to work and the ground is a bit hard to plant a tree I will plant very soon.  Hopefully this spring.  There is one problem.  I have never done this before.  I haven't ever let that  stop me in other endeavors so I'm going to try to take the same tactics I do in the world of information systems and take them into forestry systems.  
 
