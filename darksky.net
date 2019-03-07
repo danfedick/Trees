@@ -1,29 +1,34 @@
 #!/bin/bash
 
-key=xxxxxxxx
-leesburg="39.1157,-77.5636"
-coordinates=${leesburg}
+key=xxxxxx
+long=$(curl -s ifconfig.co/json | jq -r .longitude)
+lat=$(curl -s ifconfig.co/json | jq -r .latitude)
+city_name=$(curl -s ifconfig.co/json | jq -r .city)
+
+
+coordinates="${lat},${long}"
 time="currently"
 
-state=$(curl -s -X GET https://api.darksky.net/forecast/${key}/${leesburg}?exclude=daily?exclude=hourly?exclude=minutely?exclude=alerts | jq -r .)
+state=$(curl -s -X GET https://api.darksky.net/forecast/${key}/${coordinates}?exclude=daily?exclude=hourly?exclude=minutely?exclude=alerts | jq -r .)
 
 ozone=$(echo ${state} | jq -r .currently.ozone)
 visibility=$(echo ${state} | jq -r .currently.visibility)
 temperature=$(echo ${state} | jq -r .currently.temperature)
 icon=$(echo ${state} | jq -r .currently.icon)
-time=$(echo ${state} | jq -r .currently.time)
 windSpeed=$(echo ${state} | jq -r .currently.windSpeed)
 windGust=$(echo ${state} | jq -r .currently.windGust)
 cloudCover=$(echo ${state} | jq -r .currently.cloudCover)
+date=$(date)
 
 
 echo "
+ City          ${city_name}
  Coordinates:  ${coordinates}
  Ozone:        ${ozone}
  Visibility:   ${visibility}
  Temperature:  ${temperature}
  Icon:         ${icon}
- Time:         $(date -d @${time})
+ Time:         $(date)
  Wind Speed:   ${windSpeed}
  Wind Gust:    ${windGust}
  Cloud Cover:  ${cloudCover}
