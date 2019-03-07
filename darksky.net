@@ -1,0 +1,30 @@
+#!/bin/bash
+
+key=xxxxxxxx
+leesburg="39.1157,-77.5636"
+coordinates=${leesburg}
+time="currently"
+
+state=$(curl -s -X GET https://api.darksky.net/forecast/${key}/${leesburg}?exclude=daily?exclude=hourly?exclude=minutely?exclude=alerts | jq -r .)
+
+ozone=$(echo ${state} | jq -r .currently.ozone)
+visibility=$(echo ${state} | jq -r .currently.visibility)
+temperature=$(echo ${state} | jq -r .currently.temperature)
+icon=$(echo ${state} | jq -r .currently.icon)
+time=$(echo ${state} | jq -r .currently.time)
+windSpeed=$(echo ${state} | jq -r .currently.windSpeed)
+windGust=$(echo ${state} | jq -r .currently.windGust)
+cloudCover=$(echo ${state} | jq -r .currently.cloudCover)
+
+
+echo "
+ Coordinates:  ${coordinates}
+ Ozone:        ${ozone}
+ Visibility:   ${visibility}
+ Temperature:  ${temperature}
+ Icon:         ${icon}
+ Time:         $(date -d @${time})
+ Wind Speed:   ${windSpeed}
+ Wind Gust:    ${windGust}
+ Cloud Cover:  ${cloudCover}
+"
